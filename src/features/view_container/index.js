@@ -63,7 +63,7 @@ const ViewContainer = () => {
                 <Content className="site-layout-background content-container">
                     <ProjectList projects={projects} />
                 </Content>
-                <Footer style={{ textAlign: 'center' }}>Author: Breeze-P Github:
+                <Footer style={{ textAlign: 'center' }}>Author: Breeze-P | Github:
                     <a href="https://github.com/Breeze-P" style={{ whiteSpace: "pre" }}>  https://github.com/Breeze-P</a>
                 </Footer>
             </Layout>
