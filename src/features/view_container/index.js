@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
 import './style.css';
-import {Layout} from 'antd';
+import { Layout } from 'antd';
 import ProjectList from "../project_list";
 import {
     PlusCircleOutlined,
@@ -15,6 +15,7 @@ const { Header, Content, Footer } = Layout;
 const ViewContainer = () => {
     const [ projects, setProjects ] = useState([]);
     const [ timeFlag, setTimeFlag ] = useState(false);
+    const [ alertFlag, setAlertFlag ] = useState(false);
 
     useEffect(() => {
         setProjects(fetchProjects());
@@ -31,6 +32,10 @@ const ViewContainer = () => {
             setProjects(tempProjects);
             setTimeFlag(false);
         }
+    }
+
+    const addProjectForm = () => {
+
     }
 
     return(
@@ -53,13 +58,16 @@ const ViewContainer = () => {
                     <div className="header-title">
                         项目列表
                     </div>
-                    <div className="header-right">
+                    <button className="header-right" onClick={addProjectForm}>
                         <span>
                             <PlusCircleOutlined />
                             添加项目
                         </span>
-                    </div>
+                    </button>
                 </Header>
+                {(!alertFlag) ? null:
+                    <AddProjectForm />
+                }
                 <Content className="site-layout-background content-container">
                     <ProjectList projects={projects} />
                 </Content>
