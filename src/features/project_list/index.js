@@ -2,17 +2,12 @@ import React,  { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import { Row, Col, Card } from 'antd';
-import { fetchProjects } from "../../data";
 import './style.css'
 
 const { Meta } = Card;
 
-const ProjectList = () => {
-    const [ projects, setProjects ] = useState([]);
-
-    useEffect(() => {
-        setProjects(fetchProjects());
-    }, [projects]);
+const ProjectList = (props) => {
+    const { projects } = props;
 
     const rowNumber = (Math.ceil( projects.length / 4));
 
