@@ -44,43 +44,48 @@ const ViewContainer = () => {
     }
 
     return(
-        <Layout style={{ minHeight: '100vh' }}>
-            <Layout className="site-layout">
-                <Header className="site-layout-background" style={{ padding: 0 }}>
-                    <button className="header-left" onClick={sortTimeByTime}>
-                        {(!timeFlag) ?
-                            <span>
+        <div className="project-wrap">
+            {(!alertFlag) ? null:
+                <div className="cover-black" />
+            }
+            <Layout style={{ minHeight: '100vh' }}>
+                <Layout className="site-layout">
+                    <Header className="site-layout-background" style={{ padding: 0 }}>
+                        <button className="header-left" onClick={sortTimeByTime}>
+                            {(!timeFlag) ?
+                                <span>
                                 <ClockCircleOutlined />
                                 时间排序
                             </span>
-                            :
-                            <span>
+                                :
+                                <span>
                                 <RedoOutlined />
                                 序号排序
                             </span>
-                        }
-                    </button>
-                    <div className="header-title">
-                        项目列表
-                    </div>
-                    <button className="header-right" onClick={addProjectForm}>
+                            }
+                        </button>
+                        <div className="header-title">
+                            项目列表
+                        </div>
+                        <button className="header-right" onClick={addProjectForm}>
                         <span>
                             <PlusCircleOutlined />
                             添加项目
                         </span>
-                    </button>
-                </Header>
-                {(!alertFlag) ? null:
-                    <AddProjectForm onSubmit={addProjectForm}/>
-                }
-                <Content className="site-layout-background content-container">
-                    <ProjectList projects={projects} />
-                </Content>
-                <Footer style={{ textAlign: 'center' }}>Author: Breeze-P | Github:
-                    <a href="https://github.com/Breeze-P" style={{ whiteSpace: "pre" }}>  https://github.com/Breeze-P</a>
-                </Footer>
+                        </button>
+                    </Header>
+                    {(!alertFlag) ? null:
+                        <AddProjectForm onSubmit={addProjectForm}/>
+                    }
+                    <Content className="site-layout-background content-container">
+                        <ProjectList projects={projects} />
+                    </Content>
+                    <Footer style={{ textAlign: 'center' }}>Author: Breeze-P | Github:
+                        <a href="https://github.com/Breeze-P" style={{ whiteSpace: "pre" }}>  https://github.com/Breeze-P</a>
+                    </Footer>
+                </Layout>
             </Layout>
-        </Layout>
+        </div>
     )
 }
 
