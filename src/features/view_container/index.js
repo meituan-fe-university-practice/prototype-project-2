@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import './style.css';
 import { Layout } from 'antd';
 import ProjectList from "../project_list";
 import AddProjectForm from "./compontents/add_project_form";
+import Page from "../page/index"
 import {
     PlusCircleOutlined,
     ClockCircleOutlined,
@@ -44,48 +46,59 @@ const ViewContainer = () => {
     }
 
     return(
-        <div className="project-wrap">
-            {(!alertFlag) ? null:
-                <div className="cover-black" />
-            }
-            <Layout style={{ minHeight: '100vh' }}>
-                <Layout className="site-layout">
-                    <Header className="site-layout-background" style={{ padding: 0 }}>
-                        <button className="header-left" onClick={sortTimeByTime}>
-                            {(!timeFlag) ?
-                                <span>
+        <Switch>
+            <Route exact path="/project">
+                <div className="project-wrap">
+                    {(!alertFlag) ? null:
+                        <div className="cover-black" />
+                    }
+                    <Layout style={{ minHeight: '100vh' }}>
+                        <Layout className="site-layout">
+                            <Header className="site-layout-background" style={{ padding: 0 }}>
+                                <button className="header-left" onClick={sortTimeByTime}>
+                                    {(!timeFlag) ?
+                                        <span>
                                 <ClockCircleOutlined />
                                 时间排序
                             </span>
-                                :
-                                <span>
+                                        :
+                                        <span>
                                 <RedoOutlined />
                                 序号排序
                             </span>
-                            }
-                        </button>
-                        <div className="header-title">
-                            项目列表
-                        </div>
-                        <button className="header-right" onClick={addProjectForm}>
+                                    }
+                                </button>
+                                <div className="header-title">
+                                    项目列表
+                                </div>
+                                <button className="header-right" onClick={addProjectForm}>
                         <span>
                             <PlusCircleOutlined />
                             添加项目
                         </span>
-                        </button>
-                    </Header>
-                    {(!alertFlag) ? null:
-                        <AddProjectForm onSubmit={addProjectForm}/>
-                    }
-                    <Content className="site-layout-background content-container">
-                        <ProjectList projects={projects} />
-                    </Content>
-                    <Footer style={{ textAlign: 'center' }}>Author: Breeze-P | Github:
-                        <a href="https://github.com/Breeze-P" style={{ whiteSpace: "pre" }}>  https://github.com/Breeze-P</a>
-                    </Footer>
-                </Layout>
-            </Layout>
-        </div>
+                                </button>
+                            </Header>
+                            {(!alertFlag) ? null:
+                                <AddProjectForm onSubmit={addProjectForm}/>
+                            }
+                            <Content className="site-layout-background content-container">
+                                <ProjectList projects={projects} />
+                            </Content>
+                            <Footer style={{ textAlign: 'center' }}>Author: Breeze-P | Github:
+                                <a href="https://github.com/Breeze-P" style={{ whiteSpace: "pre" }}>  https://github.com/Breeze-P</a>
+                            </Footer>
+                        </Layout>
+                    </Layout>
+                </div>
+            </Route>
+            <Route exact path="/detail">
+                <Page />
+            </Route>
+            <Route path="/project/:id">
+                这是一篇文章
+            </Route>
+            <Redirect from="/*" to="/project"/>
+        </Switch>
     )
 }
 
