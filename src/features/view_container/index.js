@@ -11,7 +11,6 @@ import {
     ClockCircleOutlined,
     RedoOutlined
 } from '@ant-design/icons';
-import {fetchProjects} from "../../data";
 
 const { Header, Content, Footer } = Layout;
 
@@ -21,13 +20,27 @@ const ViewContainer = () => {
     const [ alertFlag, setAlertFlag ] = useState(false);
 
     useEffect(() => {
-        setProjects(fetchProjects());
+        fetch("http://192.168.31.226:3000/api/base").then(
+            res => {
+                return res.json();
+            }
+        ).then(
+            data => {
+                setProjects(data.data);
+            }
+        ).catch((e) => {
+            console.log(e);
+        });
     }, []);
 
     const sortTimeByTime = () => {
         let tempProjects = projects;
         if (!timeFlag) {
-            tempProjects = tempProjects.sort((a, b) => Number(a.time) - Number(b.time));
+            tempProjects = tempProjects.sort((a, b) => {
+                const aTime = new Date(a.createdAt);
+                const bTime = new Date(b.createdAt);
+                return aTime.getTime() - bTime.getTime();
+            });
             setProjects(tempProjects);
             setTimeFlag(true);
         } else {

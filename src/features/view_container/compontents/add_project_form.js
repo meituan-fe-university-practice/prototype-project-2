@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
-import { Form, Input, Button } from 'antd';
+import {Form, Input, Button} from 'antd';
+import ImageUpload from "./ImageUpload";
 import './style.css'
 
 const InputProject = (props) => {
@@ -8,13 +9,6 @@ const InputProject = (props) => {
 
     return (
         <Input value={projectNameValue} onChange={onChange} />
-    )
-}
-const InputIcon = (props) => {
-    const { iconLinkValue, onChange } = props;
-
-    return (
-        <Input value={iconLinkValue} onChange={onChange} />
     )
 }
 const InputDesc = (props) => {
@@ -33,7 +27,7 @@ const AddProjectForm = (props) => {
     const [ descValue, setDescValue ] = useState('');
 
     const onFinish = (values) => {
-        console.log('Success:', values);
+        console.log(values);
         onCancel();
     };
 
@@ -52,8 +46,8 @@ const AddProjectForm = (props) => {
     const onProjectChange = (e) => {
         setProjectNameValue(e.target.value);
     }
-    const onIconChange = (e) => {
-        setIconLinkValue(e.target.value);
+    const onIconChange = (info) => {
+        setIconLinkValue(info.file.originFileObj);
     }
     const onDescChange = (e) => {
         setDescValue(e.target.value);
@@ -81,7 +75,7 @@ const AddProjectForm = (props) => {
                 <Form.Item
                     className="form-item"
                     label="项目名称"
-                    name="projectName"
+                    name="name"
                     rules={[
                         {
                             required: true,
@@ -108,27 +102,17 @@ const AddProjectForm = (props) => {
 
                 <Form.Item
                     className="form-item"
-                    label="封面链接"
-                    name="iconLink"
+                    label="封面图片"
+                    name="icon"
                     rules={[
                         {
                             required: true,
-                            message: '请输入封面链接',
-                        },{
-                            validator: (_, value) => {
-                                const str = value;
-                                const Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-                                const objExp = new RegExp(Expression);
-                                if (objExp.test(str) === true) {
-                                    return Promise.resolve();
-                                } else {
-                                    return Promise.reject(new Error('Please input a URL'));
-                                }
-                            }
+                            message: '请上传图片',
                         }
                     ]}
                 >
-                    <InputIcon iconLinkValue={iconLinkValue} onChange={onIconChange} />
+                    {/*<InputIcon iconLinkValue={iconLinkValue} onChange={onIconChange} />*/}
+                    <ImageUpload onChange={onIconChange} />
                 </Form.Item>
 
                 <Form.Item
