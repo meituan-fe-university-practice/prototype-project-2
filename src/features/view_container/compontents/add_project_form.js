@@ -26,34 +26,60 @@ const AddProjectForm = (props) => {
     // const [ iconLinkValue, setIconLinkValue ] = useState('');
     const [ descValue, setDescValue ] = useState('');
 
-    const onLoad = (values, url) => {
+    const postData = (values, url) => {
         const httpRequest = new XMLHttpRequest();
         httpRequest.open('POST', url, true);
         httpRequest.setRequestHeader("Content-type", "application/json");
-        httpRequest.send(values);
+        httpRequest.send(JSON.stringify(values));
         return httpRequest;
     }
 
-    const onFinish = (values) => {
-        console.log(values);
-        const httpRequest = onLoad(values, "http://192.168.31.179:3000/api/base");
-        console.log(httpRequest);
+    const addProject = (values) => {
+        const httpRequest = postData(values, 'http://192.168.31.179:3000/api/base');
+
         httpRequest.onreadystatechange = function () {
             if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-                console.log("项目上传成功！");
+                console.log('成功')
             } else {
-                console.log("项目上传失败！");
+                console.log('失败')
             }
         };
+
+        console.log(httpRequest);
+    }
+
+    const onFinish = (values) => {
+        const data = {
+            name: projectNameValue,
+            desc: descValue
+        }
+        const json = JSON.stringify(data);
+
+        // const httpRequest = new XMLHttpRequest();
+        // httpRequest.open('POST', "http://192.168.31.179:3000/api/base", true);
+        // httpRequest.setRequestHeader("Content-type", "application/json");
+        // httpRequest.send(json);
+        // console.log("over");
+        //
+        // httpRequest.onreadystatechange = () => {
+        //     if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+        //         console.log("项目上传成功！");
+        //     } else {
+        //         console.log("项目上传失败！");
+        //     }
+        // };
+        // addProject(json);
+        fetch('http://192.168.31.179:3000/api/base', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(data)})
+
         onCancel();
     };
 
     const onCancel = () => {
         onSubmit();
-        form.resetFields();
-        setProjectNameValue('');
-        // setIconLinkValue('');
-        setDescValue('');
+        // form.resetFields();
+        // setProjectNameValue('');
+        // // setIconLinkValue('');
+        // setDescValue('');
     }
 
     const onFinishFailed = (errorInfo) => {
