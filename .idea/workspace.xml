@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="256d8796-4d42-4068-a2b2-287536efcb40" name="Default Changelist" comment="">
+    <list default="true" id="256d8796-4d42-4068-a2b2-287536efcb40" name="Default Changelist" comment="version 5.1">
+      <change afterPath="$PROJECT_DIR$/web/src/data/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/features/page_list/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/features/page_list/page_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/features/page/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/features/page/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/features/view_container/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/features/view_container/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/features/view_container/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/features/view_container/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,9 +37,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/data" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\meituan\figma_demo\web\src\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\meituan\figma_demo\web\src\features\page_list" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -35,8 +64,18 @@
       <option name="presentableId" value="Default" />
       <updated>1632405117911</updated>
       <workItem from="1632405119502" duration="56000" />
-      <workItem from="1632405197056" duration="228000" />
+      <workItem from="1632405197056" duration="8472000" />
+      <workItem from="1632413761645" duration="14363000" />
+      <workItem from="1632428325990" duration="789000" />
     </task>
+    <task id="LOCAL-00001" summary="version 5.1">
+      <created>1632405719066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1632405719066</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -58,5 +97,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/server_v0.3" />
     </ignored-roots>
+    <MESSAGE value="version 5.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 5.1" />
   </component>
 </project>
