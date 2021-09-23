@@ -104,7 +104,7 @@ const ViewContainer = () => {
                     </Layout>
                 </div>
             </Route>
-            <Route exact path="/detail">
+            <Route exact path="/page">
                 <Page />
             </Route>
             <Route path="/project/:id">

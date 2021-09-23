@@ -23,7 +23,7 @@ const AddProjectForm = (props) => {
     const [form] = Form.useForm();
     const { onSubmit } = props;
     const [ projectNameValue, setProjectNameValue ] = useState('');
-    const [ iconLinkValue, setIconLinkValue ] = useState('');
+    // const [ iconLinkValue, setIconLinkValue ] = useState('');
     const [ descValue, setDescValue ] = useState('');
 
     const onLoad = (values, url) => {
@@ -52,7 +52,7 @@ const AddProjectForm = (props) => {
         onSubmit();
         form.resetFields();
         setProjectNameValue('');
-        setIconLinkValue('');
+        // setIconLinkValue('');
         setDescValue('');
     }
 
@@ -64,7 +64,7 @@ const AddProjectForm = (props) => {
         setProjectNameValue(e.target.value);
     }
     const onIconChange = (info) => {
-        setIconLinkValue(info.file.originFileObj);
+        // setIconLinkValue(info.file.originFileObj);
     }
     const onDescChange = (e) => {
         setDescValue(e.target.value);
