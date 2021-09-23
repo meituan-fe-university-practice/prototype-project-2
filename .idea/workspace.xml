@@ -22,7 +22,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server_v0.3" />
   </component>
   <component name="ProjectId" id="1y7PXGPDmqrf5lTn02fIiLYBpZH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -97,7 +97,7 @@
       <workItem from="1632311137087" duration="1865000" />
       <workItem from="1632321496926" duration="2625000" />
       <workItem from="1632324240209" duration="1217000" />
-      <workItem from="1632366657299" duration="24896000" />
+      <workItem from="1632366657299" duration="25223000" />
     </task>
     <task id="LOCAL-00001" summary="version 1.0">
       <created>1631607275811</created>
@@ -197,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632403661919</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="version 5">
+      <created>1632404236716</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1632404236716</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
