@@ -26,8 +26,25 @@ const AddProjectForm = (props) => {
     const [ iconLinkValue, setIconLinkValue ] = useState('');
     const [ descValue, setDescValue ] = useState('');
 
+    const onLoad = (values, url) => {
+        const httpRequest = new XMLHttpRequest();
+        httpRequest.open('POST', url, true);
+        httpRequest.setRequestHeader("Content-type", "application/json");
+        httpRequest.send(values);
+        return httpRequest;
+    }
+
     const onFinish = (values) => {
         console.log(values);
+        const httpRequest = onLoad(values, "http://192.168.31.179:3000/api/base");
+        console.log(httpRequest);
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                console.log("项目上传成功！");
+            } else {
+                console.log("项目上传失败！");
+            }
+        };
         onCancel();
     };
 

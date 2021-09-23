@@ -1,7 +1,7 @@
 
 export const fetchProjects = () => {
 
-    fetch("http://192.168.31.226:3000/api/base").then(
+    fetch("http://192.168.31.179:3000/api/base").then(
         res => {
             return res.json();
         }
