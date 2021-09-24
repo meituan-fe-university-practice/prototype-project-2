@@ -1,6 +1,6 @@
 import React,  { useState } from 'react';
 import {Stage, Layer, Rect, Circle, Line, Star, Transformer, Label} from 'react-konva';
-import { Layout, Menu, Divider, Input, Row, Col, Button, Popover, Dropdown } from "antd";
+import { Layout, Menu, Divider, Input, Row, Col, Button, Popover } from "antd";
 import {AppstoreOutlined, BgColorsOutlined, FileOutlined, SmileOutlined, TableOutlined} from '@ant-design/icons';
 import { ChromePicker } from 'react-color'
 import 'antd/dist/antd.css';
@@ -47,14 +47,12 @@ const ShapeItem = ({ shapeProps, isSelected, onSelect, onChange }) => {
                         y: e.target.y(),
                     });
                 }}
-                onTransformEnd={(e) => {
+                onTransformEnd={() => {
                     // transformer is changing scale of the node
                     // and NOT its width or height
                     // but in the store we have only width and height
                     // to match the data better we will reset scale on transform end
                     const node = shapeRef.current;
-                    const scaleX = node.scaleX();
-                    const scaleY = node.scaleY();
 
                     // we will reset it back
                     // node.scaleX(1);
@@ -220,7 +218,7 @@ const Page = () => {
         selectShape(e.key);
     };
 
-    const handleColorChange = (color, event) => {
+    const handleColorChange = (color) => {
         handleShapeChange({
             ...shapes[Number(selectedId)],
             fill: color.hex
@@ -255,13 +253,13 @@ const Page = () => {
         }
     }
 
-    const handleStrokeColor = (color, event) => {
+    const handleStrokeColor = (color) => {
         handleShapeChange({
             ...shapes[Number(selectedId)],
             stroke: color.hex
         })
     }
-    const handleShadowColor = (color, event) => {
+    const handleShadowColor = (color) => {
         handleShapeChange({
             ...shapes[Number(selectedId)],
             shadowColor: color.hex
