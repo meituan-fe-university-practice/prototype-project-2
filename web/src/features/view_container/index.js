@@ -33,7 +33,7 @@ const ViewContainer = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/base").then(
+        fetch("http://43.129.163.47:3000/api/base").then(
             res => {
                 return res.json();
             }

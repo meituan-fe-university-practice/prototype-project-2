@@ -35,7 +35,7 @@ const AddProjectForm = (props) => {
     }
 
     const addProject = (values) => {
-        const httpRequest = postData(values, 'http://localhost:3000/api/base');
+        const httpRequest = postData(values, 'http://43.129.163.47:3000/api/base');
 
         httpRequest.onreadystatechange = function () {
             if (httpRequest.readyState === 4 && httpRequest.status === 200) {
