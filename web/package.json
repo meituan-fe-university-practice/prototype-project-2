@@ -18,7 +18,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start":"set PORT=8080 && react-scripts start",
+    "start": "cross-env PORT=8080 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "axios": "^0.21.4",
+    "cross-env": "^7.0.3",
     "react-router-dom": "^5.3.0"
   }
 }

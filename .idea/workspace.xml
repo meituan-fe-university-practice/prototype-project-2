@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="256d8796-4d42-4068-a2b2-287536efcb40" name="Default Changelist" comment="">
+    <list default="true" id="256d8796-4d42-4068-a2b2-287536efcb40" name="Default Changelist" comment="version 7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,8 @@
       <workItem from="1632413761645" duration="14363000" />
       <workItem from="1632428325990" duration="942000" />
       <workItem from="1632470443092" duration="1984000" />
-      <workItem from="1632474496970" duration="298000" />
+      <workItem from="1632474496970" duration="549000" />
+      <workItem from="1632476261218" duration="841000" />
     </task>
     <task id="LOCAL-00001" summary="version 5.1">
       <created>1632405719066</created>
@@ -91,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632471344688</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="version 7">
+      <created>1632475006736</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632475006736</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +126,7 @@
     <MESSAGE value="version 6" />
     <MESSAGE value="version 6.1" />
     <MESSAGE value="version 6.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 6.2" />
+    <MESSAGE value="version 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 7" />
   </component>
 </project>
