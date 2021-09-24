@@ -35,7 +35,7 @@ const AddProjectForm = (props) => {
     }
 
     const addProject = (values) => {
-        const httpRequest = postData(values, 'http://192.168.31.179:3000/api/base');
+        const httpRequest = postData(values, 'http://localhost:8080/api/base');
 
         httpRequest.onreadystatechange = function () {
             if (httpRequest.readyState === 4 && httpRequest.status === 200) {
@@ -49,11 +49,11 @@ const AddProjectForm = (props) => {
     }
 
     const onFinish = (values) => {
-        const data = {
-            name: projectNameValue,
-            desc: descValue
-        }
-        const json = JSON.stringify(data);
+        // const data = {
+        //     name: projectNameValue,
+        //     desc: descValue
+        // }
+        // const json = JSON.stringify(data);
 
         // const httpRequest = new XMLHttpRequest();
         // httpRequest.open('POST', "http://192.168.31.179:3000/api/base", true);
@@ -68,9 +68,9 @@ const AddProjectForm = (props) => {
         //         console.log("项目上传失败！");
         //     }
         // };
-        // addProject(json);
-        fetch('http://192.168.31.179:3000/api/base', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(data)})
+        // fetch('http://localhost:8080/api/base', {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(data)})
 
+        addProject(values);
         onCancel();
     };
 

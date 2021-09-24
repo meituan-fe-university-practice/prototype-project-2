@@ -28,8 +28,8 @@ app.on('error', (err, ctx) => {
 });
 
 
-app.listen(3000, async () => {
-  console.log('service running :3000');
+app.listen(8080, async () => {
+  console.log('service running :8080');
   // 下面一行代码用于同步数据库变更，在更新数据库表的设计之后，可以放开注释
    await dbInstance.sync();
 });
